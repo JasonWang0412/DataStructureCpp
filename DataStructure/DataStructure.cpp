@@ -2,23 +2,29 @@
 //
 
 #include <iostream>
-#include "List.h";
+#include "LinkedList.h";
 
 using namespace std;
+using namespace DataStructure;
 
 int main()
 {
-	List *pl = new List();
-	pl->Insert( 666 );
-	pl->Insert( 888 );
-	pl->Insert( 1, 777 );
-	pl->Display();
-	DataType data;
-	pl->GetElement( 1, data );
-	cout << data << endl;
-	int index;
-	pl->FindElement( 777, index );
-	cout << index << endl;
+	LinkedList pl;
+	pl.Insert( 666 );
+	pl.Insert( 888 );
+	pl.Insert( 1, 777 );
+	pl.Insert( 999 );
+	//pl.Remove();
+	//pl.Remove( 1 );
+	pl.Display();
+	pl.Clear();
+	pl.Display();
+	//DataType data;
+	//pl.GetElement( 1, data );
+	//cout << data << endl;
+	//int index;
+	//pl.FindElement( 777, index );
+	//cout << index << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

@@ -4,10 +4,20 @@ namespace DataStructure
 {
 	typedef int DataType;
 
-	class List
+	struct ListNode
+	{
+		DataType NodeData;
+		ListNode *pNextNode;
+		~ListNode()
+		{
+			DataType d = NodeData;
+		}
+	};
+
+	class LinkedList
 	{
 	public:
-		List();
+		LinkedList();
 		void Display();
 		bool Insert( int nIndex, DataType data );
 		bool Insert( DataType data );
@@ -19,9 +29,8 @@ namespace DataStructure
 		int GetLength();
 
 	private:
-		const int INITIALSIZE = 4;
-		int m_nCurrentSize;
+		ListNode *FindListNode( int nIndex );
 		int m_nLength;
-		DataType *m_pDataArray;
+		ListNode *m_pHeadNode;
 	};
 }
