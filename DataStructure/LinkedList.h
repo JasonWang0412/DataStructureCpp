@@ -14,6 +14,7 @@ namespace DataStructure
 	{
 	public:
 		LinkedList();
+		~LinkedList();
 		void Display();
 		bool Insert( int nIndex, DataType data );
 		bool Insert( DataType data );
