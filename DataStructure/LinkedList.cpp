@@ -15,8 +15,16 @@ namespace DataStructure
 
 	void LinkedList::Display()
 	{
+		ListNode *pCurrentNode = m_pHeadNode->pNextNode;
 		for( int i = 0; i < m_nLength; i++ ) {
-			cout << FindListNode( i )->NodeData << endl;
+			cout << pCurrentNode->NodeData;
+			if( i == m_nLength - 1 ) {
+				cout << "\n";
+			}
+			else {
+				cout << ", ";
+			}
+			pCurrentNode = pCurrentNode->pNextNode;
 		}
 	}
 
@@ -85,8 +93,10 @@ namespace DataStructure
 
 	bool LinkedList::FindElement( DataType target, int &nResultIndex )
 	{
+		ListNode *pCurrentNode = m_pHeadNode;
 		for( int i = 0; i < m_nLength; i++ ) {
-			if( FindListNode( i )->NodeData == target ) {
+			pCurrentNode = pCurrentNode->pNextNode;
+			if( pCurrentNode->NodeData == target ) {
 				nResultIndex = i;
 				return true;
 			}
@@ -97,7 +107,6 @@ namespace DataStructure
 	void LinkedList::Clear()
 	{
 		ListNode *pCurrentNode = m_pHeadNode->pNextNode;
-
 		while( pCurrentNode ) {
 			ListNode *pTemp = pCurrentNode;
 			pCurrentNode = pCurrentNode->pNextNode;
@@ -119,13 +128,8 @@ namespace DataStructure
 		}
 
 		ListNode *pCurrentNode = m_pHeadNode;
-		int nCurrentIndex = -1;
-		while( nCurrentIndex < nIndex ) {
-			if( !pCurrentNode ) {
-				return nullptr;
-			}
+		for( int i = -1; i < nIndex; i++ ) {
 			pCurrentNode = pCurrentNode->pNextNode;
-			nCurrentIndex++;
 		}
 		return pCurrentNode;
 	}

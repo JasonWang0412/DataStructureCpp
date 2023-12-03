@@ -8,10 +8,6 @@ namespace DataStructure
 	{
 		DataType NodeData;
 		ListNode *pNextNode;
-		~ListNode()
-		{
-			DataType d = NodeData;
-		}
 	};
 
 	class LinkedList
