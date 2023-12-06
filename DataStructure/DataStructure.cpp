@@ -2,12 +2,21 @@
 //
 
 #include <iostream>
+#include "TypeDefine.h"
 #include "LinkedList.h";
+#include "Stack.h"
 
-using namespace std;
 using namespace DataStructure;
 
+void LinkedListTest();
+void StackTest();
+
 int main()
+{
+	StackTest();
+}
+
+void LinkedListTest()
 {
 	LinkedList pl;
 
@@ -31,7 +40,7 @@ int main()
 
 	pl.Clear();
 	pl.Display(); // nothing
-	cout << pl.GetLength() << endl; // 0
+	std::cout << pl.GetLength() << std::endl; // 0
 
 	pl.Insert( 0 );
 	pl.Insert( 1 );
@@ -44,16 +53,50 @@ int main()
 	DataType data2 = -999;
 	pl.GetElement( 4, data1 );
 	pl.GetElement( 7, data2 );
-	cout << data1 << endl; // 4
-	cout << data2 << endl; // -999
+	std::cout << data1 << std::endl; // 4
+	std::cout << data2 << std::endl; // -999
 
 	int index1 = -999; int index2 = -999;
 	pl.FindElement( 4, index1 );
 	pl.FindElement( 7, index1 );
-	cout << index1 << endl; // 4
-	cout << index2 << endl; // -999
+	std::cout << index1 << std::endl; // 4
+	std::cout << index2 << std::endl; // -999
 
-	cout << pl.GetLength() << endl; // 7
+	std::cout << pl.GetLength() << std::endl; // 7
+}
+
+void StackTest()
+{
+	Stack st;
+	st.Push( 0 );
+	st.Push( 1 );
+	st.Push( 2 );
+	st.Push( 3 );
+	st.Push( 4 );
+	st.Display(); // 0, 1, 2, 3, 4
+
+	DataType data;
+	st.Peek( data );
+	std::cout << data << std::endl; // 4
+
+	st.Pop( data );
+	std::cout << data << std::endl; // 4
+
+	st.Pop( data );
+	std::cout << data << std::endl; // 3
+
+	std::cout << st.GetLength() << std::endl; // 3
+
+	st.Clear();
+	st.Display(); // empty
+
+	data = -888;
+	st.Peek( data );
+	std::cout << data << std::endl; // -888
+
+	data = -999;
+	st.Pop( data );
+	std::cout << data << std::endl; // -999
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

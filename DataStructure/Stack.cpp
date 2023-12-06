@@ -12,6 +12,10 @@ namespace DataStructure
 
 	void Stack::Display()
 	{
+		if( m_DataList.GetLength() == 0 ) {
+			std::cout << "stack empty" << std::endl;
+			return;
+		}
 		m_DataList.Display();
 	}
 
@@ -35,7 +39,7 @@ namespace DataStructure
 
 	void Stack::Clear()
 	{
-		return m_DataList.Clear();
+		m_DataList.Clear();
 	}
 
 	int Stack::GetLength()
