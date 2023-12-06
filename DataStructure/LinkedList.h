@@ -2,8 +2,6 @@
 
 namespace DataStructure
 {
-	typedef int DataType;
-
 	struct ListNode
 	{
 		DataType NodeData;

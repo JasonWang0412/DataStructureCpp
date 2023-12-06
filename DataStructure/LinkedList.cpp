@@ -1,5 +1,7 @@
-#include "LinkedList.h";
 #include <iostream>
+#include "TypeDefine.h"
+
+#include "LinkedList.h";
 
 namespace DataStructure
 {
