@@ -130,6 +130,7 @@
     <ClCompile Include="DataStructure.cpp" />
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="List.cpp" />
+    <ClCompile Include="Queue.cpp" />
     <ClCompile Include="Stack.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -5,15 +5,17 @@
 #include "TypeDefine.h"
 #include "LinkedList.h";
 #include "Stack.h"
+#include "Queue.h"
 
 using namespace DataStructure;
 
 void LinkedListTest();
 void StackTest();
+void QueueTest();
 
 int main()
 {
-	StackTest();
+	QueueTest();
 }
 
 void LinkedListTest()
@@ -99,13 +101,36 @@ void StackTest()
 	std::cout << data << std::endl; // -999
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+void QueueTest()
+{
+	Queue q;
+	q.EnQueue( 0 );
+	q.EnQueue( 1 );
+	q.EnQueue( 2 );
+	q.EnQueue( 3 );
+	q.EnQueue( 4 );
+	q.Display(); // 0, 1, 2, 3, 4
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+	DataType data;
+	q.Peek( data );
+	std::cout << data << std::endl; // 0
+
+	q.DeQueue( data );
+	std::cout << data << std::endl; // 0
+
+	q.DeQueue( data );
+	std::cout << data << std::endl; // 1
+
+	std::cout << q.GetLength() << std::endl; // 3
+
+	q.Clear();
+	q.Display(); // empty
+
+	data = -888;
+	q.Peek( data );
+	std::cout << data << std::endl; // -888
+
+	data = -999;
+	q.DeQueue( data );
+	std::cout << data << std::endl; // -999
+}
