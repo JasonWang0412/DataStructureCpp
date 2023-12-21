@@ -6,6 +6,7 @@
 #include "LinkedList.h";
 #include "Stack.h"
 #include "Queue.h"
+#include "BinaryTree.h"
 
 using namespace DataStructure;
 
@@ -15,7 +16,11 @@ void QueueTest();
 
 int main()
 {
-	QueueTest();
+	BinaryTree T;
+	T.CreateByPreOrderAndInOrder( "ABDGHCEIF", "GDHBAEICF" );
+	T.DFSTraverse(TraverseType::PreOrder);
+	std::cout << "\n";
+	T.DFSTraverse( TraverseType::InOrder );
 }
 
 void LinkedListTest()
