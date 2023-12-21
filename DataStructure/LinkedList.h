@@ -4,6 +4,8 @@ namespace DataStructure
 {
 	struct ListNode
 	{
+		friend class LinkedList;
+	private:
 		DataType NodeData;
 		ListNode *pNextNode;
 	};

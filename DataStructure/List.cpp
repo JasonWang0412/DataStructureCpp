@@ -1,5 +1,7 @@
-#include "List.h";
 #include <iostream>
+#include "TypeDefine.h"
+
+#include "List.h";
 
 using namespace std;
 
