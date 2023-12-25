@@ -14,7 +14,7 @@ namespace DataStructure
 
 	BinaryTree::~BinaryTree()
 	{
-		// TODO: delete
+		Clear( m_pRoot );
 	}
 
 	bool BinaryTree::CreateByPreOrderAndInOrder( const std::string &preOrder, const std::string &inOrder )
@@ -94,5 +94,15 @@ namespace DataStructure
 	void BinaryTree::BFSTraverse()
 	{
 		// TODO: BFS
+	}
+
+	void BinaryTree::Clear( BinaryTreeNode *node )
+	{
+		if( node == nullptr ) {
+			return;
+		}
+		Clear( node->LeftChild );
+		Clear( node->RightChild );
+		delete node;
 	}
 }

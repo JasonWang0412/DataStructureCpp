@@ -8,10 +8,9 @@ namespace DataStructure
 	{
 		friend class BinaryTree;
 	private:
-		//BinaryTreeNode *Parent;
+		char Data;
 		BinaryTreeNode *LeftChild;
 		BinaryTreeNode *RightChild;
-		char Data;
 	};
 
 	enum  TraverseType
@@ -34,6 +33,7 @@ namespace DataStructure
 
 	private:
 		void DFSTraverse( BinaryTreeNode *node, TraverseType traverseType );
+		void Clear( BinaryTreeNode *node );
 		BinaryTreeNode *ConstructTree( const std::string &preOrder, const std::string &inOrder,
 			int leftLimit, int rightLimit, int &preIndex,
 			const std::unordered_map<char, int> &indexMap );
